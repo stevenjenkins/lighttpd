@@ -146,7 +146,7 @@ int open_logfile_or_pipe(server *srv, const char* logfile) {
 int log_error_open(server *srv) {
 #ifdef HAVE_SYSLOG_H
 	/* perhaps someone wants to use syslog() */
-	openlog("lighttpd", LOG_CONS | LOG_PID, LOG_DAEMON);
+	openlog("lighttpd", LOG_CONS | LOG_PID, LOG_LOCAL6);
 #endif
 
 	srv->errorlog_mode = ERRORLOG_FD;
